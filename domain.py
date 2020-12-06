@@ -5,10 +5,9 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 class PasswordConfig:
-    def __init__(self):
-        self.providedPassword = ""
-        self.passwordSourceFileName = "..\source\passwords.json"
-        self.encryptedPasswordSourceFileName = "..\source\enc-passwords.data"
+    providedPassword = ""
+    passwordSourceFileName = "..\source\passwords.json"
+    encryptedPasswordSourceFileName = "..\source\enc-passwords.data"
 
 class PasswordManager:
     def __init__(self):
