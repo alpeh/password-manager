@@ -26,3 +26,12 @@ class ListUseCase:
             message += "\nSecurity Questions: "
             message += "\n" 
             print(message)
+
+class DecryptUseCase:
+    def __init__(self):
+        self.encryptedFileGateway = gateway.EncryptedFileGateway()
+        self.plainTextGateway = gateway.PlainTextFileGateway()
+    def execute(self):
+        passwordFile = self.encryptedFileGateway.read()
+        passwordFile.fileContents = passwordFile.decrypt()
+        self.plainTextGateway.save(passwordFile)

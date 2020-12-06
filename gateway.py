@@ -25,3 +25,7 @@ class PlainTextFileGateway:
         passwordFile = domain.PasswordFile()
         passwordFile.fileContents = fileContents
         return passwordFile
+    def save(self, passwordFile):
+        f = open(self.config.passwordSourceFileName, 'w')
+        f.write(passwordFile.fileContents)
+        f.close()
