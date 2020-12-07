@@ -11,7 +11,7 @@ class PasswordConfig:
 
 class PasswordManager:
     def __init__(self):
-        self.passwordProvided = ""
+        self.passwordProvided = PasswordConfig.providedPassword
         self.salt = "_salt_"
     def getKey(self):
         encodedPassword = self.passwordProvided.encode()
